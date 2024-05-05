@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@RestController//путь будет "/" могу @RequestMapping("/что угодно") если хочу
 public class ItemController
 {
     @Autowired
@@ -20,8 +20,15 @@ public class ItemController
         return HttpStatus.OK;
     }
 
-    @GetMapping("/list")
+    @GetMapping("/list")//получаю все товары
     public Iterable<Item> getAll() { return itemService.getAll(); }
+
+    @GetMapping("/list/{id}")//вдруг человеку иммено один товар надо)))
+    public Item getItemById(@PathVariable int id)
+    {
+        return itemService.getItemByIndex(id);
+    }
+
     @PutMapping("/list/{id}")
     public HttpStatus checkItem(@PathVariable int id)
     {

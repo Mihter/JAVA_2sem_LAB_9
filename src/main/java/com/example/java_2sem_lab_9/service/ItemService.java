@@ -9,17 +9,22 @@ import java.util.ArrayList;
 public class ItemService
 {
     private final ArrayList<Item> list = new ArrayList<Item>(){};
-    private int count = 0;
+    private int id = 0;
 
     public ArrayList<Item> getAll()
     {
         return list;
     }
 
+    public Item getItemByIndex(int i)
+    {
+        return list.get(i);
+    }
+
     public Item addProduct(String name)
     {
-        Item item = new Item(count, name);
-        count++;
+        Item item = new Item(id, name);
+        id++;
         list.add(item);
         return item;
     }
@@ -35,7 +40,7 @@ public class ItemService
     }
     public void checkItem(int id)
     {
-        getItem(id).setIsCheck();
+        getItem(id).setIsPurchased();
     }
 
     public void deleteItem(int id)

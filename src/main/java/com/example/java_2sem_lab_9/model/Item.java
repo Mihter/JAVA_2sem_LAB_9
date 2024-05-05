@@ -4,13 +4,13 @@ public class Item
 {
     private int id;
     private String name;
-    private boolean isCheck;
+    private boolean isPurchased;
 
     public Item(int id, String name)
     {
         this.id=id;
         this.name=name;
-        isCheck =false;
+        isPurchased = false;
     }
 
     public int getId()
@@ -27,13 +27,13 @@ public class Item
     {
         this.name = name;
     }
-    public boolean getIsCheck()
+    public boolean getIsPurchased()
     {
-        return isCheck;
+        return isPurchased;
     }
 
-    public void setIsCheck()
+    public void setIsPurchased()
     {
-        isCheck = !isCheck;
+        isPurchased = !isPurchased;
     }
 }

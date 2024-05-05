@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Приложение</title>
+    <title>Ведение списка покупок</title>
 </head>
 <body>
-<label>Список покупок:</label>
-<ul id="list"></ul>
-
-<label>Добавьте продукт</label>
+<label>Добавить элемент:</label>
 <input type="text" id="new">
 <button onclick="add()">Добавить</button>
+<br/>
+<a href="http://localhost:8080/list">Посмотреть все товары в JSON</a>
+<br/>
+<label>Посмотреть товар по id в JSON:</label>
+<input type="text" id="inputId" size="10">
+<button onclick="getItem()">Touch me!!!</button>
+<br/>
+<label>Список покупок:</label>
+<ol start="0" id="list"></ol>
 <script src="script.js"></script>
 </body>
 </html>
